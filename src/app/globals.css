@@ -2,32 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* styles/global.css */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* Pastikan body memiliki padding di bagian atas untuk menghindari gambar tertutup oleh navbar */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding-top: 60px; /* Sesuaikan dengan tinggi navbar Anda */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @apply bg-cover bg-center bg-fixed;
+  background-image: url("/background.jpg");
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Atur gambar agar responsif dan mempertahankan rasio aslinya */
+.responsive-image-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.responsive-image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
